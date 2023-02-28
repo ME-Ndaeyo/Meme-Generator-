@@ -4,30 +4,25 @@
   margin: 0;
 }
 
-section{
-  display: grid;
-}
-
 nav{
   background-color: #672280;
   color: #fff;
   display: flex;
   align-items: center;
-  height: 8vmin;
-  padding: 0.5rem 0.9rem;
+  justify-content: space-between;
+  height: 12vmin;
+  padding: 0.8rem 1.2rem;
   text-transform: capitalize;
 }
 
-.nav--logo{
+.nav--logo, .nav--logo img{
   height: 100%;
-  margin-right: 0.8rem;
 }
 .nav--logo img{
-  height: inherit;
 }
 
 .nav--header{
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 main{
@@ -48,6 +43,7 @@ form{
 form input{
   grid-row: 1;
   
+  text-indent: 0.5rem;
   height: 3rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -82,9 +78,13 @@ form button{
   cursor: pointer;
 }
 
+form button:active{
+  transform: scale(0.98, 0.96);
+}
+
 .meme--img-box{
+  position: relative;
   grid-row: 3;
-  width: 35rem;
   justify-self: center;
 }
 
@@ -93,6 +93,23 @@ form button{
   height: 100%;
 }
 
+.meme--img-box .meme-text{
+  position: absolute;
+  transform: translate(50%,5%);
+  right: 50%;
+
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.meme-text.top{
+  top: 0;
+}
+
+.meme-text.bottom{
+  bottom: 0;
+}
 
 /* Test */
 .box{
@@ -109,20 +126,20 @@ form button{
   justify-content: center;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 37.5em){
   html{
     font-size: 75%;
   }
 
   nav{
-    padding: 0.8rem;
+    height: 10vmin;
   }
 
   main{
     row-gap: 0;
   }
 
-  .meme--img-box{
+  /* .meme--img-box{
     width: 100%;
-  }
+  } */
 }
